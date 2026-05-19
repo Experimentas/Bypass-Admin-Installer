@@ -13,7 +13,7 @@ color 0A
 for /f "delims=" %%I in ('powershell -NoProfile -Command "Add-Type -AssemblyName System.Windows.Forms; $FileBrowser = New-Object System.Windows.Forms.OpenFileDialog; $FileBrowser.Filter = 'EXE Files|*.exe'; $FileBrowser.Title = 'Select EXE Installer'; if ($FileBrowser.ShowDialog() -eq 'OK') { echo $FileBrowser.FileName }"') do set "INSTALLER=%%I"
 
 :: -- Validation --
-if "%INSTALLER%"=="" (
+if "LagSwitch_2.0.3_x86_en-US.msi%"=="" (
     echo [!] Operation cancelled by user.
     timeout /t 2
     exit /b
